@@ -199,6 +199,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
 
   <div id="root"></div>
+
+  <!--jQuery-->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- newsletter modal -->
+  <!-- Modal -->
+  
+
+<!-- Boton login -->
+  <script>
+		$(document).ready(function () {
+			$(".button-log a").click(function () {
+				$(".overlay-login").fadeToggle(200);
+				$(this).toggleClass('btn-open').toggleClass('btn-close');
+			});
+		});
+		$('.overlay-close1').on('click', function () {
+			$(".overlay-login").fadeToggle(200);
+			$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+			open = false;
+		});
+  </script>
+  
+  
+
+
+
 </body>
 
 <!--footer -->
