@@ -1,6 +1,8 @@
 import React from 'react';
 import {Products} from "./Products";
 import {Home} from "./Home";
+import {Contacto} from "./Contacto";
+import {Informacion} from "./Informacion";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 /*import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/nova-light/theme.css';
@@ -19,7 +21,9 @@ class App extends React.Component{
       <Router>
         <Switch>
           <Route path="/home" component={Home}/>
+          <Route path="/informacion" component={Informacion}/>
           <Route path="/products" component={Products}/>
+          <Route path="/" component={Contacto}/>
         </Switch>
       </Router>
     )
