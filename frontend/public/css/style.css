@@ -154,7 +154,7 @@ h1.logo-w3layouts a.navbar-brand {
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #ff4e00;
+    color: #0044ff;
     border-radius: 0px;
 }
 
@@ -267,7 +267,7 @@ ul.cart-inner-info li {
     letter-spacing: 3px;
 }
 .top-info i {
-    color: #ff4e00;
+    color: #0044ff;
 }
 /*-- //header --*/
 
@@ -434,7 +434,7 @@ a.animated-button:visited:hover:after {
 }
 
 a.animated-button.gibson-three {
-	border: 2px solid #ff4e00;
+	border: 2px solid #0044ff;
 	color: #fff;
 }
 
@@ -452,7 +452,7 @@ a.animated-button.gibson-three:after {
 a.animated-button.gibson-three:hover:after {
 	height: 600% !important;
 	opacity: 1;
-	color: #ff4e00;
+	color: #0044ff;
 }
 
 
@@ -474,7 +474,7 @@ a.animated-button.gibson-three:hover:after {
 
 .login button.btn.btn-primary.submit {
     box-shadow: 2px 2px #54575a;
-    background: #ff4e00;
+    background: #0044ff;
     padding: 0.5em 2em;
     letter-spacing: 1px;
     border: none;
@@ -614,7 +614,7 @@ figure.effect-lexi h3 {
     color: #fff;
 }
 figure.effect-lexi h3 span {
-    color: #ff4e00;
+    color: #0044ff;
 }
 
 figure.effect-lexi p {
@@ -653,7 +653,7 @@ figure.effect-lexi:hover p {
 }
 .mail-grid-text-info h3 {
     font-size: 0.9em;
-    color: #ff4e00;
+    color: #0044ff;
     margin: 0em 0 0.5em;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -743,7 +743,7 @@ button.close {
     outline: none;
 }
 .modal-body h6 {
-    color: #ff4e00;
+    color: #0044ff;
     font-size: 1.1em;
     letter-spacing: 1px;
 }
@@ -758,7 +758,7 @@ button.close {
     font-size: 1.2em;
 }
 .login.newsletter a:hover {
-    color: #ff4e00;
+    color: #0044ff;
 }
 ul.agile_top_section li {
     display: inline-block;
@@ -769,7 +769,7 @@ ul.agile_top_section li {
 
 a.shop {
     display: inline-block;
-    background: #f60b0e;
+    background: #0044ff;
     padding: 0.55em 1em;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -993,8 +993,8 @@ ul.social-icons li a i.fab.fa-twitter:hover {
 }
 
 ul.social-icons li a i.fab.fa-google-plus-g:hover {
-	background: #dd4b39;
-	border: 1px solid #dd4b39;
+	background: #0044ff;
+	border: 1px solid #0044ff;
 	-webkit-transition: all 0.4s;
 	-moz-transition: all 0.4s;
 	-ms-transition: all 0.4s;
@@ -1017,7 +1017,7 @@ ul.social-icons li a i.fab.fa-google-plus-g:hover {
 .customer-info h6 {
     font-size: 1em;
     margin: 1em 0;
-    color: #ff4e00;
+    color: #0044ff;
 }
 .customer-info ul.social-icons li a i {
     color: #202223;
@@ -1056,7 +1056,7 @@ ul.social-icons li a i.fab.fa-google-plus-g:hover {
 }
 
 .ser-first-grid:hover span {
-    color: #F60B0E;
+    color: #0044ff;
 }
 
 .ser-first-grid p {
@@ -1208,7 +1208,7 @@ input#datepicker {
 }
 
 .payment-online-form-left input[type="text"]:hover {
-    border-color: #fa6e6f;
+    border-color: #0044ff;
 }
 
 .text-box-light {
@@ -1265,7 +1265,7 @@ input#datepicker {
 }
 
 .payment-sendbtns input[type="submit"] {
-    background: #f60b0e;
+    background: #0044ff;
     padding: 10px 50px;
     border: none;
     color: #FFF;
@@ -1289,7 +1289,7 @@ input#datepicker {
 
 .payment-sendbtns input[type="submit"]:hover {
     color: #fff;
-    background: #f60b0e;
+    background: #0044ff;
 }
 
 .payment-sendbtns li {
@@ -1335,7 +1335,7 @@ ul.short li {
 }
 
 ul.short li a {
-    color: #ff4e00;
+    color: #0044ff;
 }
 
 /*-- /error --*/
@@ -1358,7 +1358,7 @@ a.b-home {
 }
 
 a.b-home:hover {
-    background: #ff4e00;
+    background: #0044ff;
     letter-spacing: 1px;
 }
 
@@ -1404,7 +1404,7 @@ a.b-home:hover {
     cursor: pointer;
 }
 .error_page button.btn1:hover {
-    background: #ff4e00;
+    background: #0044ff;
 }
 .error_page form {
     margin: 0 auto;
@@ -1438,7 +1438,7 @@ h3.tittle-w3layouts.two{
 .testimonials_grid label {
     font-size: 1em;
     letter-spacing: 1px;
-    color: #ff4e00;
+    color: #0044ff;
 }
 .testimonials_grid h3 span {
     font-weight: 100;
@@ -1480,7 +1480,7 @@ a.carousel-control-next.test, a.carousel-control-prev.test {
     color: #333!important;
 }
 .footer-top-w3layouts-grid-sec:hover .mail-grid-icon i {
-    color: #ff4e00;
+    color:#0044ff;
 }
 /*--footer--*/
 
@@ -1513,7 +1513,7 @@ footer {
 	font-weight: 300;
 	font-size: 1.2em;
 	line-height: 1.9;
-	color: #ff4e00;
+	color:#0044ff;
 }
 
 .copyright-w3layouts {
@@ -1557,7 +1557,7 @@ footer {
 }
 
 .footer-text button.btn1 {
-	color: #ff4e00;
+	color: #0044ff;
 	border: none;
 	padding: 10px 0;
 	outline: none;
@@ -1620,7 +1620,7 @@ ul.links li a:hover {
 }
 
 .copyright-w3layouts a i:hover {
-	color: #ffa200;
+	color: #0044ff;
 	transition: all 0.7s ease-in-out;
 	-webkit-transition: all 0.7s ease-in-out;
 	-moz-transition: all 0.7s ease-in-out;
@@ -1641,13 +1641,13 @@ ul.links li a:hover {
     font-size: 15px;
 }
 .footer-social li a:hover {
-    color: #ff4e00;
+    color: #0044ff;
 }
 
 /*--//social-icons--*/
 
 .copyright-w3layouts a {
-    color: #ff4e00;
+    color: #0044ff;
 }
 
 /*--//footer--*/

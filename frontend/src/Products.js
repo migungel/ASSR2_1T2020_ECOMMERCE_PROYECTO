@@ -55,7 +55,7 @@ export class Products extends React.Component{
                         <div className="p-col-12">stock: <b>{data.stock}</b></div>
                     </div>
                 </div>
-                <Button icon="pi pi-plus-circle" ></Button>
+                <button type="submit" class="googles-cart pgoogles-cart">Comprar</button>
             </div>
         </div>
     );
@@ -71,7 +71,8 @@ renderGridItem(data) {
                 <div className="p-col-12">price: <b>{data.price}</b></div>
                 <div className="p-col-12">description: <b>{data.description}</b></div>
                 <div className="p-col-12">stock: <b>{data.stock}</b></div>
-                <Button icon="pi pi-plus-circle" ></Button>
+                <button type="submit" class="googles-cart pgoogles-cart">Comprar</button>
+                  
             </Panel>
             </form>
         </div>
