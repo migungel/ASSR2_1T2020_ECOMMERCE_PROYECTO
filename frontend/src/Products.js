@@ -5,10 +5,8 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import ProductServices from './service/ProductServices';
 import {DataView, DataViewLayoutOptions} from 'primereact/dataview';
-import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
-import {dialog, Dialog} from 'primereact/dialog';
-import {panel,Panel} from 'primereact/panel';
+import {Panel} from 'primereact/panel';
 
 export class Products extends React.Component{
   constructor(){
@@ -55,7 +53,7 @@ export class Products extends React.Component{
                         <div className="p-col-12">stock: <b>{data.stock}</b></div>
                     </div>
                 </div>
-                <button type="submit" class="googles-cart pgoogles-cart">Comprar</button>
+                <button type="submit" className="googles-cart pgoogles-cart">Comprar</button>
             </div>
         </div>
     );
@@ -71,7 +69,7 @@ renderGridItem(data) {
                 <div className="p-col-12">price: <b>{data.price}</b></div>
                 <div className="p-col-12">description: <b>{data.description}</b></div>
                 <div className="p-col-12">stock: <b>{data.stock}</b></div>
-                <button type="submit" class="googles-cart pgoogles-cart">Comprar</button>
+                <button type="submit" className="googles-cart pgoogles-cart">Comprar</button>
                   
             </Panel>
             </form>

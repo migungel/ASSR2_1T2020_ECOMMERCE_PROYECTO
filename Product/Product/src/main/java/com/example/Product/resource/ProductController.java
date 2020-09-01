@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin()
 public class ProductController {
         @Autowired
         private ProductRepository repository;
