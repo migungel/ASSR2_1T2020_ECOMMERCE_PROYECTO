@@ -1,90 +1,107 @@
 import React from 'react';
 import SellerServices from './service/SellerService';
+import CustomerServices from './service/CustomerService';
 import {Button} from 'primereact/button'
 export class Registrarse extends React.Component{
     constructor(){
         super();
         this.state={
-            seller:{
+            userx:{
                 user:'',
                 mail:'',
                 passwd:'',
                 phone:'',
                 direccion:'',
-                productList:[1,2]
-            }
+            },
+            option:''
         };
         this.sellerServices= new SellerServices();
+        this.customerServices=new CustomerServices();
         this.save=this.save.bind(this);
       }
 
       save(){
-          this.sellerServices.save(this.state.seller).then(data => {
-            this.seState({
-                seller:{
-                    user:'',
-                    mail:'',
-                    passwd:'',
-                    phone:'',
-                    direccion:'',
-                    productList:[1,2]
-                }
-            });
-            console.log(data);
-        })
+          if (this.state.option==="usuario"){
+            this.customerServices.save(this.state.userx).then(data => {
+                this.seState({
+                    userx:{
+                        user:'',
+                        mail:'',
+                        passwd:'',
+                        phone:'',
+                        direccion:'',
+                        tarjeta:'',
+                        numeroTarjeta:''
+                    }
+                });
+            })
+         }else{
+            this.sellerServices.save(this.state.userx).then(data => {
+                this.seState({
+                    userx:{
+                        user:'',
+                        mail:'',
+                        passwd:'',
+                        phone:'',
+                        direccion:'',
+                        productList:[]
+                    }
+                });
+            })
+         }
       }
     
       render(){
         return(
             <div className="contact-wthree">
-                <form id="seller-form"action="http://localhost:8080/">
+                <form id="userx-form"action="http://localhost:8080/">
                     
                     <h3>Paso 1 :</h3>
                     <div className="form-w3step1">
                         <input type="email" className="email agileits-btm" name="Email" placeholder="Email" required="" 
-                            value={this.state.seller.mail} 
+                            value={this.state.userx.mail} 
                             onChange={(e) => {
                                 let val = e.target.value;
                                 this.setState(prevState => {
-                                    let seller = Object.assign({},prevState.seller);
-                                    seller.mail=val;
-                                    return {seller};
+                                    let userx = Object.assign({},prevState.userx);
+                                    userx.mail=val;
+                                    return {userx};
                                 })}
                             }/> 
                     </div> 
                     <h3>Paso 2 :</h3>
                     <div className="form-w3step1">  
                         <input type="text" name="User Name" placeholder="Username" required="" 
-                            value={this.state.seller.user} 
+                            value={this.state.userx.user} 
                             onChange={(e) => {
                                 let val = e.target.value;
                                 this.setState(prevState => {
-                                    let seller = Object.assign({},prevState.seller);
-                                    seller.user=val;
-                                    return {seller};
+                                    let userx = Object.assign({},prevState.userx);
+                                    userx.user=val;
+                                    return {userx};
                                 })}
                             }/>
                         <input type="password" name="Password" placeholder="Password" required="" 
-                            value={this.state.seller.passwd} 
+                            value={this.state.userx.passwd} 
                             onChange={(e) => {
                                 let val = e.target.value;
                                 this.setState(prevState => {
-                                    let seller = Object.assign({},prevState.seller);
-                                    seller.passwd=val;
-                                    return {seller};
+                                    let userx = Object.assign({},prevState.userx);
+                                    userx.passwd=val;
+                                    return {userx};
                                 })}
                             }/>
                     </div>
                     <h3>Paso 3 :</h3>
                     <div className="form-w3step1 w3ls-formrow">
                         <input type="text" name="Number" placeholder="Número de Teléfono" required="" 
-                            value={this.state.seller.phone} 
+                            value={this.state.userx.phone} 
                             onChange={(e) => {
                                 let val = e.target.value;
                                 this.setState(prevState => {
-                                    let seller = Object.assign({},prevState.seller);
-                                    seller.phone=val;
-                                    return {seller};
+                                    let userx = Object.assign({},prevState.userx);
+                                    userx.phone=val;
+                                    return {userx};
 
                                 })}
                             }/>
@@ -92,8 +109,24 @@ export class Registrarse extends React.Component{
                     <h4>Paso 4 :</h4>
                     <div className="tipo">
                         <p>Tipo:
-                            Usuario <input type = "radio" name = "ice" value = "usuario"/>  
-                            Vendedor <input type = "radio" name = "ice" value = "vendedor"/> 
+                            Usuario <input type = "radio" name = "ice" value = "usuario"
+                            onChange={(e) =>{
+                                let val=e.target.value;
+                                this.setState(prevOpt => {
+                                    let option = Object.assign('',prevOpt.option);
+                                    option=val;
+                                    return{option};
+                            })}
+                            }/>  
+                            Vendedor <input type = "radio" name = "ice" value = "vendedor"
+                            onChange={(e) =>{
+                                let val=e.target.value;
+                                this.setState(prevOpt => {
+                                    let option = Object.assign('',prevOpt.option);
+                                    option=val;
+                                    return{option};
+                            })}
+                            }/> 
                         </p>
                     </div>
                         
