@@ -10,10 +10,14 @@ import axios from 'axios';
     save(customer) {
         return axios.post(this.baseUrl + "addCustomer", customer).then(res => res.data);
     }
-/*
-    getOne(seller){
-        //String userclient = "user1";//=client.getUser
-        return axios.get(this.baseUrl + '/findCustomer/{'+ "seller1" + '}').then(res => res.data);
-    }*/
+
+    getOne(id){
+        return axios.get(this.baseUrl+"/findCustomer/"+id).then(res =>res.data);
+    }
+
+    update(customer) {
+        return axios.put(this.baseUrl + "updateCustomer", customer).then(res => res.data);
+    }
+
 }
 export default CustomerService;

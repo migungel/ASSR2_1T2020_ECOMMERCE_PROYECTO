@@ -19,6 +19,12 @@ public class SellerController {
         return "Added seller with id : " + seller.getUser();
     }
 
+    @PutMapping("/updateSeller")
+    public String updateSeller(@RequestBody Seller seller) {
+        repository.save(seller);
+        return "Added seller with id : " + seller.getUser();
+    }
+
     @GetMapping("/findAllSeller")
     public List<Seller> getSeller() {
         return repository.findAll();

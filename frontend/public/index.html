@@ -25,171 +25,12 @@
         <link href="css/style.css" rel='stylesheet' type='text/css' />
         <link href="css/fontawesome-all.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
-        <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
-        rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
     </head>
-    <div class="banner-top container-fluid" id="home">
-      <header>
-          <div class="row">
-              <div class="col-md-3 top-info text-left mt-lg-4">
+    <div id="root">
+ 
+</div>
 
-              </div>
-              <div class="col-md-6 logo-w3layouts text-center">
-                  <h1 class="logo-w3layouts">
-                      <a class="navbar-brand" href="http://localhost:8080/products">
-                          <img src="images/logo-hadita.png"> </a>
-                  </h1>
-              </div>
-
-              <div class="col-md-3 top-info-cart text-right mt-lg-4">
-                  <ul class="cart-inner-info">
-                      <li class="button-log">
-                          <a class="btn-open" href="#">
-                              <span class="fa fa-user" aria-hidden="true"></span>
-                          </a>
-                      </li>
-                      <li class="galssescart galssescart2 cart cart box_1">
-                          <form action="#" method="post" class="last">
-                              <input type="hidden" name="cmd" value="_cart">
-                              <input type="hidden" name="display" value="1">
-                          </form>
-                      </li>
-                  </ul>
-                  <div class="overlay-login text-left">
-                      <button type="button" class="overlay-close1">
-                          <i class="fa fa-times" aria-hidden="true"></i>
-                      </button>
-                      <div class="wrap">
-                          <h5 class="text-center mb-4">Iniciar Sesion</h5>
-                          <div class="login p-5 bg-dark mx-auto mw-100">
-                              <form action="#" method="post">
-                                  <div class="form-group">
-                                      <label class="mb-2">Correo Electronico</label>
-                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="mb-2">Contraseña</label>
-                                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
-                                  </div>
-                                  <button type="submit" class="btn btn-primary submit mb-4">Iniciar Sesion</button>
-                              </form>
-
-                              <div class="mensaje">
-                                  <p>Si no tiene una cuenta, registrese.</p>
-                                  <form action="http://localhost:8080/registrarse">
-                                    <button type="submit" class="btn btn-primary submit mb-4" href="http://localhost:8080/registrarse" >Registrarse</button>
-                                  </form>                                   
-                              </div>
-
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <label class="top-log mx-auto"></label>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
-
-              <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                  aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon">
-
-                  </span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav nav-mega mx-auto">
-                      <li class="nav-item active">
-                          <a class="nav-link ml-lg-0" href="http://localhost:8080/products">Inicio
-                              <span class="sr-only">(current)</span>
-                          </a>
-                      </li>
-                      
-                      <li class="nav-item">
-                          <a class="nav-link" href="about.html">Quienes somos</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="contact.html">Contactenos</a>
-                      </li>
-                  </ul>
-
-              </div>
-          </nav>
-      </header>
-    <body>
-   
-      <div id="root"></div>    
-      <script src="js/jquery-2.2.3.min.js"></script>
-      <script src="js/modernizr-2.6.2.min.js"></script>
-      <script src="js/classie-search.js"></script>
-      <script src="js/demo1-search.js"></script>
-      
-      <script>
-        $(document).ready(function () {
-          $(".button-log a").click(function () {
-            $(".overlay-login").fadeToggle(200);
-            $(this).toggleClass('btn-open').toggleClass('btn-close');
-          });
-        });
-        $('.overlay-close1').on('click', function () {
-          $(".overlay-login").fadeToggle(200);
-          $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
-          open = false;
-        });
-      </script>
-      <script src="js/simplyCountdown.js"></script>
-      <link href="css/simplyCountdown.css" rel='stylesheet' type='text/css' />
-      <script>
-          var d = new Date();
-          simplyCountdown('simply-countdown-custom', {
-              year: d.getFullYear(),
-              month: d.getMonth() + 2,
-              day: 25
-          });
-      </script>
-      <script src="js/owl.carousel.js"></script>
-      <script>
-          $(document).ready(function () {
-              $('.owl-carousel').owlCarousel({
-                  loop: true,
-                  margin: 10,
-                  responsiveClass: true,
-                  responsive: {
-                      0: {
-                          items: 1,
-                          nav: true
-                      },
-                      600: {
-                          items: 2,
-                          nav: false
-                      },
-                      900: {
-                          items: 3,
-                          nav: false
-                      },
-                      1000: {
-                          items: 4,
-                          nav: true,
-                          loop: false,
-                          margin: 20
-                      }
-                  }
-              })
-          })
-      </script>
-    <script src="js/move-top.js"></script>
-      <script src="js/easing.js"></script>
-      <script>
-          jQuery(document).ready(function($) {
-              $(".scroll").click(function(event) {
-                  event.preventDefault();
-                  $('html,body').animate({
-                      scrollTop: $(this.hash).offset().top
-                  }, 900);
-              });
-          });
-      </script>
-      <script src="js/bootstrap.js"></script>
-    </body>
 <!--footer -->
 <footer class="py-lg-5 py-3">
   <div class="container-fluid px-lg-5 px-3">
@@ -199,4 +40,91 @@
   </div>
 </footer>
 <!-- //footer -->
+
+<script src="js/jquery-2.2.3.min.js"></script>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/classie-search.js"></script>
+<script src="js/demo1-search.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $(".button-log a").click(function () {
+      $(".overlay-login").fadeToggle(200);
+      $(this).toggleClass('btn-open').toggleClass('btn-close');
+    });
+  });
+  $('.overlay-close1').on('click', function () {
+    $(".overlay-login").fadeToggle(200);
+    $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+    open = false;
+  });
+</script>
+<script src="js/simplyCountdown.js"></script>
+<link href="css/simplyCountdown.css" rel='stylesheet' type='text/css' />
+<script>
+    var d = new Date();
+    simplyCountdown('simply-countdown-custom', {
+        year: d.getFullYear(),
+        month: d.getMonth() + 2,
+        day: 25
+    });
+</script>
+<script src="js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                900: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    loop: false,
+                    margin: 20
+                }
+            }
+        })
+    })
+</script>
+<script src="js/move-top.js"></script>
+<script src="js/easing.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 900);
+        });
+    });
+</script>
+<script src="js/bootstrap.js"></script>
+<style>
+    .container {
+      margin: 0 0 1rem;
+      display: flex;
+      /* align-items por defecto tiene el valor `stretch` */
+      align-items: start;
+    }
+    .center-h {
+      justify-content: center;
+    }
+    .center-v {
+      align-items: center;
+    }
+
+    </style>
 </html>

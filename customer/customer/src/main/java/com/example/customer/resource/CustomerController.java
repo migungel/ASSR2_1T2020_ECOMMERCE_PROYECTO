@@ -18,6 +18,11 @@ public class CustomerController {
         repository.save(customer);
         return "Added customer with id : " + customer.getUser(); }
 
+    @PutMapping("/updateCustomer")
+    public String updateCustomer(@RequestBody Customer customer) {
+        repository.save(customer);
+        return "Added customer with id : " + customer.getUser(); }    
+
     @GetMapping("/findAllCustomer")
     public List<Customer> getCustomer() {
         return repository.findAll();

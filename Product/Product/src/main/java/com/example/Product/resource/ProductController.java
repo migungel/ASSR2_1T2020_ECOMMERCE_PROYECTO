@@ -20,6 +20,12 @@ public class ProductController {
             return "Added product with id : " + product.getId();
         }
 
+        @PutMapping("/updateProduct")
+        public String updateProduct(@RequestBody Product product) {
+            repository.save(product);
+            return "Added product with id : " + product.getId();
+        }
+
         @GetMapping("/findAllProducts")
         public List<Product> getProduct() {
             return repository.findAll();

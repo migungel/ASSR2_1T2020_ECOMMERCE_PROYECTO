@@ -23,7 +23,7 @@ export class Registrarse extends React.Component{
       save(){
           if (this.state.option==="usuario"){
             this.customerServices.save(this.state.userx).then(data => {
-                this.seState({
+                this.setState({
                     userx:{
                         user:'',
                         mail:'',
@@ -37,7 +37,7 @@ export class Registrarse extends React.Component{
             })
          }else{
             this.sellerServices.save(this.state.userx).then(data => {
-                this.seState({
+                this.setState({
                     userx:{
                         user:'',
                         mail:'',
@@ -67,7 +67,7 @@ export class Registrarse extends React.Component{
                         <p>Debe llenar todos los campos. </p>
 			        </div>
                     <div className="contact-wthree">
-                        <form id="userx-form" onSubmit={this.save} action="http://localhost:8080/">
+                        <form id="userx-form" onSubmit={this.save} >
                             
                             <h3>Paso 1 :</h3>
                             <div className="form-w3step1">
