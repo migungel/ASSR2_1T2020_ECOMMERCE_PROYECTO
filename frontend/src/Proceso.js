@@ -56,6 +56,7 @@ export class Proceso extends React.Component{
         {
             label: 'Pago',
             command: (event) => {
+                this.suma();
                 document.getElementById("proceso-productos").style.display='none';
                 document.getElementById("proceso-datos").style.display='none';
                 document.getElementById("proceso-pago").style.display='inline';
@@ -113,9 +114,10 @@ export class Proceso extends React.Component{
     let suma=0;
     this.setState({pago:0});
     //for(let i of numeros)
+     if(this.state.target!==null){
      this.state.target.forEach(function(a){suma+=a.price;})
      this.setState({pago:suma});
-     
+     }
  }
 
  resta(){
@@ -133,7 +135,7 @@ export class Proceso extends React.Component{
             <div>        
                 <div className="card">
                     <h1>Proceso de Compra</h1>
-                    <Steps model={this.items} activeIndex={this.state.activeIndex} onSelect={(e) => this.setState({ activeIndex: e.index }),this.suma} readOnly={false} />
+                    <Steps model={this.items} activeIndex={this.state.activeIndex} onSelect={(e) => this.setState({ activeIndex: e.index })} readOnly={false} />
                 </div>
             </div>
 
@@ -209,7 +211,15 @@ export class Proceso extends React.Component{
                             </span>
                             </div>
                             </div>
-                        <Button  label="ACTUALIZAR" id="btn_enviar" type= "submit" onClick={this.customerServices.update(this.state.userx), this.suma}></Button>    
+                        <Button  label="ACTUALIZAR" id="btn_enviar" type= "submit" onClick={(e) => {
+                            this.customerServices.update(this.state.userx)
+                            this.setState({activeIndex:2})
+                            this.suma()
+                            document.getElementById("proceso-productos").style.display='none';
+                            document.getElementById("proceso-datos").style.display='none';
+                            document.getElementById("proceso-pago").style.display='inline';
+                            document.getElementById("proceso-confirmacion").style.display='none';
+                            }}></Button>    
             </div>
 
             <div id="proceso-pago"  className="card" hidden >
@@ -229,7 +239,6 @@ export class Proceso extends React.Component{
 
             <div id="proceso-confirmacion"  hidden >
             <div className="p-fluid "> 
-                <form>
                         <div>
                             <div className="p-col-4">
                                 <span >
@@ -276,9 +285,15 @@ export class Proceso extends React.Component{
                                 </span>
                             </div>
                             <div className="p-field p-col-5 p-md-4" >
-                            <Button   label="PAGAR" id="btn_enviar" type= "submit" onClick={this.resta}></Button> 
+                            <Button   label="PAGAR" id="btn_enviar" type= "submit" onClick={(e)=>{
+                                this.setState({target:null})
+                                this.setState({activeIndex:0})
+                                document.getElementById("proceso-productos").style.display='inline';
+                                document.getElementById("proceso-datos").style.display='none';
+                                document.getElementById("proceso-pago").style.display='none';
+                                document.getElementById("proceso-confirmacion").style.display='none';
+                                this.resta()}}></Button> 
                             </div>
-            </form>
         </div>
         </div>
     </div>

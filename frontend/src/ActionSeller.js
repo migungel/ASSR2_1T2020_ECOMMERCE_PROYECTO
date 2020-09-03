@@ -70,7 +70,8 @@ export class ActionSeller extends React.Component{
             this.setState({userx:data})
             idsx.push(data.productList);
         })
-       this.productServices.getAll().then(data =>{
+        if (idsx[0]!==null){
+        this.productServices.getAll().then(data =>{
             data.forEach(function(a){
                 idsx[0].forEach(function(i){
                     console.log(i)            
@@ -80,7 +81,7 @@ export class ActionSeller extends React.Component{
             })
         })
 
-        })
+        })}
     this.setState({ids:idsx})    
     this.setState({products:arr})
         
@@ -115,7 +116,13 @@ export class ActionSeller extends React.Component{
                           <div className="p-col-12">description: <b>{data.description}</b></div>
                           <div className="p-col-12">stock: <b>{data.stock}</b></div>
                       </div>
-                  <Button type="submit" label="EDITAR" className="googles-cart pgoogles-cart" onClick={(e) => this.setState({ selected: data })}></Button>
+                  <Button type="submit" label="EDITAR" className="googles-cart pgoogles-cart" onClick={(e) => {
+                      this.setState({ selected: data })
+                      this.setState({activeIndex:2})
+                      document.getElementById("proceso-datos").style.display='none';
+                      document.getElementById("proceso-productos").style.display='none';
+                      document.getElementById("proceso-edit").style.display='inline';
+                  }}></Button>
             </div>
         </div>
     );
@@ -130,7 +137,13 @@ renderGridItem(data) {
                 <div className="p-col-12">price: <b>{data.price}</b></div>
                 <div className="p-col-12">description: <b>{data.description}</b></div>
                 <div className="p-col-12">stock: <b>{data.stock}</b></div>
-                <Button type="submit" label="EDITAR" className="googles-cart pgoogles-cart"onClick={(e) => this.setState({ selected: data })}></Button>                
+                <Button type="submit" label="EDITAR" className="googles-cart pgoogles-cart"onClick={(e) => {
+                      this.setState({ selected: data })
+                      this.setState({activeIndex:2})
+                      document.getElementById("proceso-datos").style.display='none';
+                      document.getElementById("proceso-productos").style.display='none';
+                      document.getElementById("proceso-edit").style.display='inline';
+                  }}></Button>                
             </Panel>
         </div>
     );
@@ -227,7 +240,13 @@ renderHeader() {
                             </div>
 
                         </div>    
-                        <Button  label="ACTUALIZAR" id="btn_enviar" type= "submit" onClick={this.sellerServices.update(this.state.userx), this.suma}></Button>    
+                        <Button  label="ACTUALIZAR" id="btn_enviar" type= "submit" onClick={(e)=>{
+                            this.sellerServices.update(this.state.userx)
+                            this.setState({activeIndex:1})
+                            document.getElementById("proceso-datos").style.display='none';
+                            document.getElementById("proceso-productos").style.display='inline';
+                            document.getElementById("proceso-edit").style.display='none';
+                            }}></Button>    
             </div>
             <div id="proceso-productos" hidden>
             <div class="container"  >
@@ -241,28 +260,11 @@ renderHeader() {
             </div>
             <div id="proceso-edit"  className="card" hidden>
                     <div className="p-fluid"> 
-                        <form>
                             <div className="p-field p-col-12 p-md-4">
                                 <span className="p-float-label">
                                     <label type="text" name="User Name" className="p-col-20 p-md-20" placeholder="Username"  
                                         value={usuario}>ID: {this.state.selected.id}</label>
                                 </span>
-                            </div>
-
-                            <div className="p-field p-col-12 p-md-4">
-                            <span className="p-float-label">
-                                <InputText id="name" value={this.state.selected.name} 
-                                    onChange={(e) => {
-                                        let val = e.target.value;
-                                        this.setState(prevState => {
-                                            let selected = Object.assign({},prevState.selected);
-                                            selected.name=val;
-                                            return {selected};
-
-                                        })}
-                                    }required/>
-                                <label htmlFor="inputtext"className="p-col-20 p-md-20">Nombre: </label>
-                            </span>
                             </div>
 
                             <div className="p-field p-col-12 p-md-4">
@@ -329,10 +331,20 @@ renderHeader() {
                             </span>
                             </div>
                             <div className="p-field p-col-12 p-md-4">
-                            <Button  label="ACTUALIZAR" id="btn_enviar"  type= "submit" onClick={this.productServices.update(this.state.selected)}></Button>
-                            </div>
-                            
-                        </form>
+                            <Button  label="ACTUALIZAR" id="btn_enviar"  type= "submit" onClick={(e)=>{
+                                this.productServices.update(this.state.selected)
+                                this.setState({activeIndex:0})
+                                this.setState({selected:{}})
+                                document.getElementById("name").value=""
+                                document.getElementById("description").value=""
+                                document.getElementById("stock").value=""
+                                document.getElementById("price").value=""
+                                document.getElementById("proceso-datos").style.display='inline'
+                                document.getElementById("proceso-productos").style.display='none'
+                                document.getElementById("proceso-edit").style.display='none'
+                            }}></Button>
+                                
+                            </div>                            
                 </div>
             </div>
     </div>
